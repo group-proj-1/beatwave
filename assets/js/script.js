@@ -11,7 +11,7 @@ function getToken() {
     })
         .then(response => response.json())
         .then(data => {
-            fetch('https://api.spotify.com/v1/browse/categories', {
+            fetch('https://api.spotify.com/v1/recommendations/available-genre-seeds', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -25,3 +25,7 @@ function getToken() {
         });
 }
 getToken();
+
+// select genre
+// get x number of tracks
+// POST method to make playlist
