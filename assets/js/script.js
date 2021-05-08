@@ -16,7 +16,8 @@ function getToken() {
     })
         .then(response => response.json())
         .then(data => {
-            let category = "party";
+            let weatherCondition = getWeather();
+            let category = playlistOptions[weatherCondition] || "party";
             fetch(`https://api.spotify.com/v1/browse/categories/${category}/playlists?limit=10`, {
                 method: 'GET',
                 headers: {
@@ -44,13 +45,17 @@ function getToken() {
 getToken();
 
 
-// fetch('https://api.spotify.com/v1/users/{user_id}/playlists', {
-//     method: 'POST',
+function getWeather() {
+    let city = "Chicago";
+    let weather = "";
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=513558c8e04c7ce19dc87e69d4a6c2ab`)
+                .then(response => response.json())
+                .then(data => {          
+                    console.log(data.weather[0].main);
+                    weather = (data.weather[0].main);
+                });
+    return weather
+}
 
-// }
-
-
-// select genre
-// get x number of tracks
-// POST method to make playlist
+getWeather();
 
