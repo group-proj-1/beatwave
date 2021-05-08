@@ -11,7 +11,7 @@ function getToken() {
     })
         .then(response => response.json())
         .then(data => {
-            fetch('https://api.spotify.com/v1/recommendations/available-genre-seeds', {
+            fetch('https://api.spotify.com/v1/recommendations?seed_genres=country&limit=10', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -21,16 +21,18 @@ function getToken() {
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
-                    console.log(data.genres[10]);
-
-                    // data.forEach((genre) => {
-                    //     console.log(genre.)
-                    // })
                 });
             console.log(data);
         });
 }
 getToken();
+
+
+// fetch('https://api.spotify.com/v1/users/{user_id}/playlists', {
+//     method: 'POST',
+
+// }
+
 
 // select genre
 // get x number of tracks

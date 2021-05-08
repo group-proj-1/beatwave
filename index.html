@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <title>beat wave</title>
 </head>
 
@@ -18,11 +18,12 @@
 
     <div class="container-1 mix">
         <div class="box-1">
-            <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <iframe id="songVariable" src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300"
+                height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
     </div>
-  
-      <div class="container-2">
+
+    <div class="container-2">
         <div class="box-2 mix">
 
             <!--input data goes here *city/zipcode-->
@@ -32,13 +33,13 @@
                 <label for="zipcode">Zip code:</label>
                 <input type="text" id="zipcode" name="zipcode"><br><br>
                 <input type="submit" value="Submit">
-              </form>
+            </form>
         </div>
 
         <div class="box-3 mix">
             <p>A Weather Widget goes here</p>
         </div>
-     </div>
+    </div> 
 
 
     <!-- header that says "beat wave" -->
