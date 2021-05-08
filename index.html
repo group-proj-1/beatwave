@@ -11,12 +11,34 @@
     <title>beat wave</title>
 </head>
 
-<body>
-    <header>
-    <h1>beat wave </h1>
-   
-    <button class="play-button"> <i class="fas fa-play-circle"></i></button>
-    </header>
+<header class="header"> <i class="fas fa-music"></i> beat wave <i class="fas fa-cloud-sun-rain"></i></header>
+
+<body class="body">
+
+
+    <div class="container-1 mix">
+        <div class="box-1">
+            <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+    </div>
+  
+      <div class="container-2">
+        <div class="box-2 mix">
+
+            <!--input data goes here *city/zipcode-->
+            <form action="/action_page.php">
+                <label for="cityname">city:</label>
+                <input type="text" id="cityname" name="cityname"><br><br>
+                <label for="zipcode">Zip code:</label>
+                <input type="text" id="zipcode" name="zipcode"><br><br>
+                <input type="submit" value="Submit">
+              </form>
+        </div>
+
+        <div class="box-3 mix">
+            <p>A Weather Widget goes here</p>
+        </div>
+     </div>
 
 
     <!-- header that says "beat wave" -->
