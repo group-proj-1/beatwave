@@ -1,3 +1,5 @@
+/* media query*/
+
 @media(min-width:768px){
     .container-1 {
         display: flex;
@@ -50,5 +52,7 @@
 .body {
     background-color:grey;
 }
+
+/*class for the borders*/
 
 .mix {border-style: dotted dashed solid double;}
