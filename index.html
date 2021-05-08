@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <title>beat wave</title>
 </head>
 
@@ -15,17 +15,18 @@
 
 <body class="body">
 
-        <!-- spotify playlist-->
+    <!-- spotify playlist-->
 
     <div class="container-1 mix">
         <div class="box-1">
-            <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <iframe id="songVariable" src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300"
+                height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
     </div>
 
-  <!--input data goes here *city/zipcode*-->
+    <!--input data goes here *city/zipcode*-->
 
-      <div class="container-2">
+    <div class="container-2">
         <div class="box-2 mix">
 
             <form action="/action_page.php">
@@ -34,17 +35,21 @@
                 <label for="zipcode">Zip code:</label>
                 <input type="text" id="zipcode" name="zipcode"><br><br>
                 <input type="submit" value="Submit">
-              </form>
+            </form>
         </div>
 
-            <!--weather widget-->
+        <!--weather widget-->
         <div class="box-3 mix">
-            <a class="weatherwidget-io" href="https://forecast7.com/en/41d88n87d63/chicago/?unit=us" data-label_1="CHICAGO" data-label_2="WEATHER" data-font="Arial Black" data-icons="Climacons Animated" data-theme="dark" data-basecolor="teal" data-textcolor="darkorange" data-highcolor="#f53211" data-lowcolor="#0015ff" data-suncolor="#dfe912" data-mooncolor="white" data-cloudfill="lightgrey" >CHICAGO WEATHER</a>
+            <a class="weatherwidget-io" href="https://forecast7.com/en/41d88n87d63/chicago/?unit=us"
+                data-label_1="CHICAGO" data-label_2="WEATHER" data-font="Arial Black" data-icons="Climacons Animated"
+                data-theme="dark" data-basecolor="teal" data-textcolor="darkorange" data-highcolor="#f53211"
+                data-lowcolor="#0015ff" data-suncolor="#dfe912" data-mooncolor="white"
+                data-cloudfill="lightgrey">CHICAGO WEATHER</a>
             <script>
-                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
             </script>
         </div>
-     </div>
+    </div>
 
 
     <!-- header that says "beat wave" -->
