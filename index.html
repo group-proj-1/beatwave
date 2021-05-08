@@ -11,21 +11,23 @@
     <title>beat wave</title>
 </head>
 
-<header class="header"> <i class="fas fa-music"></i> beat wave <i class="fas fa-cloud-sun-rain"></i></header>
+<header class="header"> <i class="fas fa-music"></i> Beat Wave <i class="fas fa-cloud-sun-rain"></i></header>
 
 <body class="body">
 
+        <!-- spotify playlist-->
 
     <div class="container-1 mix">
         <div class="box-1">
             <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
     </div>
-  
+
+  <!--input data goes here *city/zipcode*-->
+
       <div class="container-2">
         <div class="box-2 mix">
 
-            <!--input data goes here *city/zipcode-->
             <form action="/action_page.php">
                 <label for="cityname">city:</label>
                 <input type="text" id="cityname" name="cityname"><br><br>
@@ -35,8 +37,12 @@
               </form>
         </div>
 
+            <!--weather widget-->
         <div class="box-3 mix">
-            <p>A Weather Widget goes here</p>
+            <a class="weatherwidget-io" href="https://forecast7.com/en/41d88n87d63/chicago/?unit=us" data-label_1="CHICAGO" data-label_2="WEATHER" data-font="Arial Black" data-icons="Climacons Animated" data-theme="dark" data-basecolor="teal" data-textcolor="darkorange" data-highcolor="#f53211" data-lowcolor="#0015ff" data-suncolor="#dfe912" data-mooncolor="white" data-cloudfill="lightgrey" >CHICAGO WEATHER</a>
+            <script>
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+            </script>
         </div>
      </div>
 
