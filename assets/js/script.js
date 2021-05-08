@@ -11,7 +11,8 @@ function getToken() {
     })
         .then(response => response.json())
         .then(data => {
-            fetch('https://api.spotify.com/v1/recommendations?seed_genres=country&limit=10', {
+            let category = "party";
+            fetch(`https://api.spotify.com/v1/browse/categories/${category}/playlists?limit=10`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -20,6 +21,13 @@ function getToken() {
             })
                 .then(response => response.json())
                 .then(data => {
+                    let player = document.getElementById("songVariable");
+
+                    // create a playlist with POST method and userID with fetch
+                    // get that playlist ID and push 10 songs into the playlist with fetch (data.tracks.id) use forEach
+                    // the playlist id is a variable
+
+                    player.src = `https://open.spotify.com/embed/playlist/${data.playlists.items[0].id}`
                     console.log(data);
                 });
             console.log(data);
