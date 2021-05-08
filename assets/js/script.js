@@ -20,8 +20,14 @@ function getToken() {
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
+                    console.log(data);
+                    console.log(data.genres[10]);
+
+                    // data.forEach((genre) => {
+                    //     console.log(genre.)
+                    // })
                 });
+            console.log(data);
         });
 }
 getToken();
@@ -29,3 +35,4 @@ getToken();
 // select genre
 // get x number of tracks
 // POST method to make playlist
+
