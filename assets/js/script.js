@@ -62,22 +62,22 @@ getWeather();
 //////////////////////////////////////////  input city name here function /////////////////////////////////////////
 
 let button = document.querySelector('.button')
-let inputvalue = document.querySelector('.inputvalue')
-let name = document.querySelector('.name')
+let inputValue = document.querySelector('.inputValue')
+let cityName = document.querySelector('.cityName')
 let desc = document.querySelector('.desc')
 let temp = document.querySelector('.temp')
 
 button.addEventListener('click',function(){
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputvalue.value+'&appid=2acf688360ef2e4ae9e0ba6153c2285f')
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&units=imperial&appid=2acf688360ef2e4ae9e0ba6153c2285f')
     .then(response => response.json())
     .then(data => {
-        let namevalue = data['name'];
-        let tempvalue = data['main']['temp'];
-        let descvalue = data['weather'][0]['description'];
+        let nameValue = data['name'];
+        let tempValue = data['main']['temp'];
+        let descValue = data['weather'][0]['description'];
 
-        name.innerHTML = namevalue;
-        temp.innerHTML = tempvalue;
-        desc.innerHTML = descvalue;
+        cityName.innerHTML = nameValue;
+        temp.innerHTML = tempValue;
+        desc.innerHTML = descValue;
     })
 
 
