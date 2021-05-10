@@ -24,18 +24,19 @@
         </div>
     </div>
 
-    <!--input data goes here *city/zipcode*-->
+    <!--input data goes here *city name*-->
 
     <div class="container-2">
         <div class="box-2 mix">
-
-            <form action="/action_page.php">
-                <label for="cityname">city:</label>
-                <input type="text" id="cityname" name="cityname"><br><br>
-                <label for="zipcode">Zip code:</label>
-                <input type="text" id="zipcode" name="zipcode"><br><br>
-                <input type="submit" value="Submit">
-            </form>
+            <div class="input">
+                <input type="text" class="inputValue" placeholder="Enter a city">
+                <input type="submit" value="submit" class="button">
+            <div class="display">
+                <h1 class="cityName"></h1>
+                <p class="desc"></p>
+                <p class="temp"></p>
+            </div>
+            </div>
         </div>
 
         <!--weather widget-->
@@ -55,50 +56,6 @@
     <!-- header that says "beat wave" -->
     <!-- button to press play that plays music based on chicago's weather -->
     <!-- "you're listening to music based on the weather in chicago" -->
-    {
-    "coord": {
-    "lon": -87.65,
-    "lat": 41.85
-    },
-    "weather": [
-    {
-    "id": 803,
-    "main": "Clouds",
-    "description": "broken clouds",
-    "icon": "04d"
-    }
-    ],
-    "base": "stations",
-    "main": {
-    "temp": 283.51,
-    "feels_like": 281.8,
-    "temp_min": 282.04,
-    "temp_max": 285.37,
-    "pressure": 1021,
-    "humidity": 46
-    },
-    "visibility": 10000,
-    "wind": {
-    "speed": 5.14,
-    "deg": 60
-    },
-    "clouds": {
-    "all": 75
-    },
-    "dt": 1620492444,
-    "sys": {
-    "type": 1,
-    "id": 4861,
-    "country": "US",
-    "sunrise": 1620470267,
-    "sunset": 1620521783
-    },
-    "timezone": -18000,
-    "id": 4887398,
-    "name": "Chicago",
-    "cod": 200
-    }
-
     <!-- container that holds two boxes side by side -->
     <!-- on the left, it asks for user input -->
     <!-- div that contains the input -->

@@ -53,6 +53,18 @@
     background-color:grey;
 }
 
+.display {
+text-align: center;
+color: teal;
+font-family: sans-serif;
+}
+
+.input {
+    text-align: center;
+    
+}
+
+
 /*class for the borders*/
 
 .mix {border-style: dotted dashed solid double;}

@@ -1,9 +1,48 @@
+let playlistOptions = {
+    Rain: "hiphop",
+    Snow: "sleep",
+    Mist: "country",
+    Smoke: "mood",
+    Haze: "latin",
+    Dust: "toplists",
+    Fog: "rock",
+    Sand: "aapi_heritage_month",
+    Dust: "rnb",
+    Ash: "edm_dance",
+    Squall: "indie_alt",
+    Tornado: "chill",
+    Clear: "party",
+    Clouds: "sleep",
+}
+
+// category ids:
+// toplists
+// hiphop
+// pop
+// country
+// rock
+// latin
+// mood
+// aapi_heritage_month
+// rnb
+// workout
+// edm_dance
+// indie_alt
+// sleep
+// chill
+// inspiration
+// equal
+// focus
+// decades
+// party
+// kids_family
+
 function getRandom(arr) {
     let index = Math.floor(Math.random() * arr.length);
     return arr[index];
 }
 
-function getToken() {
+function getPlaylist() {
     const clientId = '7b1ddde2b4bd4ee182d6a36abe2a35cd';
     const clientSecret = '7774875a0e4c46feb89f46acd70dc278';
     fetch('https://accounts.spotify.com/api/token', {
@@ -42,7 +81,7 @@ function getToken() {
             console.log(data);
         });
 }
-getToken();
+getPlaylist();
 
 
 function getWeather() {
@@ -54,8 +93,32 @@ function getWeather() {
         console.log(data.weather[0].main);
         weather = data.weather[0].main;
       });
+
     return weather
 }
 
 getWeather();
 
+//////////////////////////////////////////  input city name here function /////////////////////////////////////////
+
+let button = document.querySelector('.button')
+let inputValue = document.querySelector('.inputValue')
+let cityName = document.querySelector('.cityName')
+let desc = document.querySelector('.desc')
+let temp = document.querySelector('.temp')
+
+button.addEventListener('click', function () {
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + inputValue.value + '&units=imperial&appid=2acf688360ef2e4ae9e0ba6153c2285f')
+        .then(response => response.json())
+        .then(data => {
+            let nameValue = data['name'];
+            let tempValue = data['main']['temp'];
+            let descValue = data['weather'][0]['description'];
+
+            cityName.innerHTML = nameValue;
+            temp.innerHTML = tempValue;
+            desc.innerHTML = descValue;
+        })
+
+
+})
