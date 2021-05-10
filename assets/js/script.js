@@ -1,9 +1,103 @@
+let playlistOptions = [
+    {
+        weather: "Thunderstorm",
+        category: "workout"
+    },
+    {
+        weather: "Drizzle",
+        category: "indie_alt"
+    },
+    {
+        weather: "Drizzle",
+        category: "indie_alt"
+    },
+    {
+        weather: "Drizzle",
+        category: "indie_alt"
+    },
+    {
+        weather: "Drizzle",
+        category: "indie_alt"
+    },
+    {
+        weather: "Drizzle",
+        category: "indie_alt"
+    },
+    {
+        weather: "Drizzle",
+        category: "indie_alt"
+    },
+    {
+        weather: "Drizzle",
+        category: "indie_alt"
+    },
+    {
+        weather: "Drizzle",
+        category: "indie_alt"
+    },
+    {
+        weather: "Drizzle",
+        category: "indie_alt"
+    },
+    {
+        weather: "Drizzle",
+        category: "indie_alt"
+    },
+    {
+        weather: "Drizzle",
+        category: "indie_alt"
+    },
+    {
+        weather: "Drizzle",
+        category: "indie_alt"
+    },
+
+    // Rain: "hiphop",
+    // Snow: "sleep",
+    // Mist: "",
+    // Smoke: "",
+    // Haze: "",
+    // Dust: "",
+    // Fog: "",
+    // Sand: "",
+    // Dust: "",
+    // Ash: "",
+    // Squall: "",
+    // Tornado: "",
+    // Clear: "",
+    // Clouds: "party",
+];
+
+// category ids:
+// toplists
+// hiphop
+// pop
+// country
+// rock
+// latin
+// mood
+// aapi_heritage_month
+// rnb
+// workout
+// edm_dance
+// indie_alt
+// sleep
+// chill
+// inspiration
+// equal
+// focus
+// decades
+// party
+// kids_family
+//
+
+
 function getRandom(arr) {
     let index = Math.floor(Math.random() * arr.length);
     return arr[index];
 }
 
-function getToken() {
+function getPlaylist() {
     const clientId = '7b1ddde2b4bd4ee182d6a36abe2a35cd';
     const clientSecret = '7774875a0e4c46feb89f46acd70dc278';
     fetch('https://accounts.spotify.com/api/token', {
@@ -42,18 +136,18 @@ function getToken() {
             console.log(data);
         });
 }
-getToken();
+getPlaylist();
 
 
 function getWeather() {
     let city = "Chicago";
     let weather = "";
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=513558c8e04c7ce19dc87e69d4a6c2ab`)
-                .then(response => response.json())
-                .then(data => {          
-                    console.log(data.weather[0].main);
-                    weather = (data.weather[0].main);
-                });
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.weather[0].main);
+            weather = (data.weather[0].main);
+        });
     return weather
 }
 
