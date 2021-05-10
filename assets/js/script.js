@@ -46,16 +46,15 @@ getToken();
 
 
 function getWeather() {
-    let city = "Chicago";
+    let city = [];
     let weather = "";
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=513558c8e04c7ce19dc87e69d4a6c2ab`)
-                .then(response => response.json())
-                .then(data => {          
-                    console.log(data.weather[0].main);
-                    weather = (data.weather[0].main);
-                });
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=513558c8e04c7ce19dc87e69d4a6c2ab`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.weather[0].main);
+        weather = data.weather[0].main;
+      });
     return weather
 }
 
 getWeather();
-
