@@ -55,7 +55,7 @@ function getPlaylist() {
     })
         .then(response => response.json())
         .then(data => {
-            let weatherCondition = getWeather();
+            let weatherCondition = "Haze";
             let category = playlistOptions[weatherCondition] || "party";
             fetch(`https://api.spotify.com/v1/browse/categories/${category}/playlists?limit=10`, {
                 method: 'GET',
@@ -71,6 +71,8 @@ function getPlaylist() {
 
                     let randomPlaylist = getRandom(data.playlists.items);
                     let randomPlaylistId = randomPlaylist.id;
+                    console.log(category);
+                    console.log(randomPlaylist);
                     console.log(randomPlaylistId);
                     // get that playlist ID and push 10 songs into the playlist with fetch (data.tracks.id) use forEach
                     // the playlist id is a variable
