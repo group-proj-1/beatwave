@@ -1,72 +1,19 @@
-let playlistOptions = [
-    {
-        weather: "Thunderstorm",
-        category: "workout"
-    },
-    {
-        weather: "Drizzle",
-        category: "indie_alt"
-    },
-    {
-        weather: "Drizzle",
-        category: "indie_alt"
-    },
-    {
-        weather: "Drizzle",
-        category: "indie_alt"
-    },
-    {
-        weather: "Drizzle",
-        category: "indie_alt"
-    },
-    {
-        weather: "Drizzle",
-        category: "indie_alt"
-    },
-    {
-        weather: "Drizzle",
-        category: "indie_alt"
-    },
-    {
-        weather: "Drizzle",
-        category: "indie_alt"
-    },
-    {
-        weather: "Drizzle",
-        category: "indie_alt"
-    },
-    {
-        weather: "Drizzle",
-        category: "indie_alt"
-    },
-    {
-        weather: "Drizzle",
-        category: "indie_alt"
-    },
-    {
-        weather: "Drizzle",
-        category: "indie_alt"
-    },
-    {
-        weather: "Drizzle",
-        category: "indie_alt"
-    },
-
-    // Rain: "hiphop",
-    // Snow: "sleep",
-    // Mist: "",
-    // Smoke: "",
-    // Haze: "",
-    // Dust: "",
-    // Fog: "",
-    // Sand: "",
-    // Dust: "",
-    // Ash: "",
-    // Squall: "",
-    // Tornado: "",
-    // Clear: "",
-    // Clouds: "party",
-];
+let playlistOptions = {
+    Rain: "hiphop",
+    Snow: "sleep",
+    Mist: "country",
+    Smoke: "mood",
+    Haze: "latin",
+    Dust: "toplists",
+    Fog: "rock",
+    Sand: "aapi_heritage_month",
+    Dust: "rnb",
+    Ash: "edm_dance",
+    Squall: "indie_alt",
+    Tornado: "chill",
+    Clear: "party",
+    Clouds: "sleep",
+}
 
 // category ids:
 // toplists
@@ -89,8 +36,6 @@ let playlistOptions = [
 // decades
 // party
 // kids_family
-//
-
 
 function getRandom(arr) {
     let index = Math.floor(Math.random() * arr.length);
@@ -161,18 +106,18 @@ let cityName = document.querySelector('.cityName')
 let desc = document.querySelector('.desc')
 let temp = document.querySelector('.temp')
 
-button.addEventListener('click',function(){
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&units=imperial&appid=2acf688360ef2e4ae9e0ba6153c2285f')
-    .then(response => response.json())
-    .then(data => {
-        let nameValue = data['name'];
-        let tempValue = data['main']['temp'];
-        let descValue = data['weather'][0]['description'];
+button.addEventListener('click', function () {
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + inputValue.value + '&units=imperial&appid=2acf688360ef2e4ae9e0ba6153c2285f')
+        .then(response => response.json())
+        .then(data => {
+            let nameValue = data['name'];
+            let tempValue = data['main']['temp'];
+            let descValue = data['weather'][0]['description'];
 
-        cityName.innerHTML = nameValue;
-        temp.innerHTML = tempValue;
-        desc.innerHTML = descValue;
-    })
+            cityName.innerHTML = nameValue;
+            temp.innerHTML = tempValue;
+            desc.innerHTML = descValue;
+        })
 
 
 })
