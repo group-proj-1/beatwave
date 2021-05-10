@@ -55,7 +55,7 @@ function getPlaylist() {
     })
         .then(response => response.json())
         .then(data => {
-            let weatherCondition = "Haze";
+            let weatherCondition = getWeather();
             let category = playlistOptions[weatherCondition] || "party";
             fetch(`https://api.spotify.com/v1/browse/categories/${category}/playlists?limit=10`, {
                 method: 'GET',
