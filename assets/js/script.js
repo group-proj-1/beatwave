@@ -1,6 +1,6 @@
 let playlistOptions = {
     Rain: "hiphop",
-    Snow: "sleep",
+    Snow: "indie_alt",
     Mist: "country",
     Smoke: "mood",
     Haze: "latin",
@@ -68,6 +68,17 @@ function init() {
         )
 };
 
+function getFiveDay(lat, lon) {
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=current,minutely,hourly,alerts&appid=2acf688360ef2e4ae9e0ba6153c2285f`)
+        .then(response => response.json())
+        .then(data => {
+            data.daily.forEach(day => {
+                console.log(day.temp.day)
+                // show temp in div on right
+            });
+        })
+}
+
 function getWeather() {
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + inputValue.value + '&units=imperial&appid=2acf688360ef2e4ae9e0ba6153c2285f')
         .then(response => response.json())
@@ -75,7 +86,9 @@ function getWeather() {
             let nameValue = data['name'];
             let tempValue = data['main']['temp'];
             let descValue = data['weather'][0]['main'];
-
+            let lat = data.coord.lat;
+            let lon = data.coord.lon;
+            getFiveDay(lat, lon);
             cityName.innerHTML = nameValue;
             temp.innerHTML = tempValue;
             desc.innerHTML = descValue;
