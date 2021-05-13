@@ -20,7 +20,7 @@ let inputValue = document.querySelector('.inputValue');
 let cityName = document.querySelector('.cityName');
 let desc = document.querySelector('.desc');
 let temp = document.querySelector('.temp');
-let forecast = document.querySelector('.forecast');
+let weatherContainer = document.getElementById('weatherContainer')
 
 function init() {
     fetch('https://api.openweathermap.org/data/2.5/weather?q=chicago&units=imperial&appid=2acf688360ef2e4ae9e0ba6153c2285f')
@@ -75,19 +75,16 @@ function getFiveDay(lat, lon) {
         .then(data => {
             console.log(data);
             data.daily.forEach(day => {
-                console.log(day.temp.day)
-                // show temp in div on right
-            });
-        })
-}
-
-function getFiveDayConditions(lat, lon) {
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=current,minutely,hourly,alerts&appid=2acf688360ef2e4ae9e0ba6153c2285f`)
-        .then(response => response.json())
-        .then(data => {
-            data.daily.forEach(day => {
-                console.log(day.weather[0].description)
-                // show condition in div on right
+                let tempForecast = day.temp.day;
+                let conditionForecast = day.weather[0].description;
+                let weatherCard = document.createElement('div');
+                let temp = document.createElement('h1');
+                temp.innerHTML = tempForecast;
+                weatherCard.append(temp)
+                let description = document.createElement('p');
+                description.innerHTML = conditionForecast;
+                weatherCard.append(description);
+                weatherContainer.append(weatherCard)
             });
         })
 }
@@ -102,7 +99,6 @@ function getWeather() {
             let lat = data.coord.lat;
             let lon = data.coord.lon;
             getFiveDay(lat, lon);
-            getFiveDayConditions(lat, lon);
             cityName.innerHTML = nameValue;
             temp.innerHTML = tempValue;
             desc.innerHTML = descValue;
