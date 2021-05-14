@@ -45,7 +45,7 @@ header {
     animation: glowing 1300ms infinite;
 }
 
-.icon {
+.icons {
     color:darkorange;
     text-shadow: 2px 2px #270033;
 }
@@ -88,7 +88,7 @@ header {
 
 .text {
     text-align: center;
-    font-family: 'Architects Daughter', sans-serif;
+    font-family: 'Roboto condensed', sans-serif;
     font-size: 2.5vw;
     padding: 10px;
 }
@@ -125,7 +125,6 @@ header {
 
 @media(min-width:1150px) {
 .text{
-    font-size: 35px;
+    font-size: 39px;
 }
 }
-
