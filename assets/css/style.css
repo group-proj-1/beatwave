@@ -4,6 +4,7 @@
     .container-1 {
         background-color: teal;
         border:darkorange solid;
+        color: darkorange;
         display: flex; 
         flex-wrap: wrap; 
         font-family:sans-serif;
@@ -17,53 +18,98 @@
         flex-direction: row;
         height: 400px; 
     }
-}
 
-
-.box-1 {
-    align-content: center;
-}
-
-.box-2 {
-    background-color: darkorange;
-    border: teal solid;
-    flex-basis: 50%;
-    margin: 5px;
-    padding: 10px;
-}
-
-.box-3 {
-    border:teal solid;
-    background-color: darkorange;
-    flex-basis: 50%;
-    margin: 5px;
-    padding: 10px;
-}
-
-.header {
-    color:black;
-    font-family:sans-serif;
-    font-size: 100px;
-    text-align: center;
-
-}
-
-.body {
-    background-color:grey;
-}
-
-.display {
-    color: teal;
-    font-family: sans-serif;
-    text-align: center;
-}
-
-.input {
-    text-align: center;
+    .box-1 {
+        align-content: center;
+    }
     
+    .box-2 {
+        background-color: darkorange;
+        border: teal solid;
+        flex-basis: 50%;
+        margin: 5px;
+        padding: 10px;
+    }
+    
+    .box-3 {
+        color: teal;
+        display: flex;
+        flex-wrap:wrap;
+        font-size: 15px;
+        justify-content: space-evenly;
+        border:teal solid;
+        background-color: darkorange;
+        flex-basis: 50%;
+        margin: 5px;
+        padding: 10px;
+        text-align: center
+        
+    }
+    
+    .header {
+        color:black;
+        font-family:sans-serif;
+        font-size: 100px;
+        text-align: center;
+    
+    }
+    
+    .body {
+        background-color:grey;
+    }
+    
+    .display {
+        color: teal;
+        font-family: sans-serif;
+        text-align: center;
+    }
+    
+    .input {
+        text-align: center;
+        
+    }
+
+    .button {
+        background-color: #1c87c9;
+        -webkit-border-radius: 60px;
+        border-radius: 60px;
+        border: none;
+        color: #eeeeee;
+        cursor: pointer;
+        display: inline-block;
+        font-family: sans-serif;
+        font-size: 20px;
+        padding: 10px 10px;
+        text-align: center;
+        text-decoration: none;
+        animation: glowing 1300ms infinite;
+    }
+
+    @keyframes glowing {
+        0% {
+          background-color: #2ba805;
+          box-shadow: 0 0 3px #2ba805;
+        }
+        50% {
+          background-color: #49e819;
+          box-shadow: 0 0 10px #49e819;
+        }
+        100% {
+          background-color: #2ba805;
+          box-shadow: 0 0 3px #2ba805;
+        }
+      }
+
+      .text {
+          text-align: center;
+
+      }
+    
+    
+    /*class for the borders*/
+    
+    .mix {
+        border-style: dotted dashed solid double;
+    }
+
 }
-
-
-/*class for the borders*/
-
-.mix {border-style: dotted dashed solid double;}
