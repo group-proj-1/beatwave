@@ -74,6 +74,7 @@ function getFiveDay(lat, lon) {
         .then(response => response.json())
         .then(data => {
             console.log(data);
+            weatherContainer.innerHTML = "";
             data.daily.forEach((day, index) => {
                 if (index === 0) {
                     return;
@@ -160,6 +161,13 @@ function getRandom(arr) {
     return arr[index];
 };
 
+let textInput = document.getElementById('inputValue');
+
 button.addEventListener('click', getWeather);
+textInput.addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+        getWeather();
+    }
+})
 
 init();
