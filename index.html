@@ -14,11 +14,11 @@
     <title>beat wave</title>
 </head>
 
-<header> <i class="fas fa-music cute"></i> Beat Wave <i class="fas fa-cloud-sun-rain cute"></i></header>
+<header> <i class="fas fa-music icon"></i> Beat Wave <i class="fas fa-cloud-sun-rain icon"></i></header>
 
 <body>
     
-    <!-- spotify playlist-->
+
     <div class="container-1 mix">
         <div class=container-2>
             <span class="text">
@@ -28,7 +28,7 @@
             All you have to do is input a city of your choosing, and Beatwave will give you a Spotify playlist based on the current weather of that city. Happy listening!
             </strong>
         </span>
-        
+<!--input data goes here *city name*-->
             <div class="input">
                 <input type="text" class="inputValue" id="inputValue" placeholder="Enter a city">
                 <input type="submit" value="submit" id="button" class="button">
@@ -39,6 +39,7 @@
                 </div>
             </div>
         </div>
+<!-- spotify playlist-->
         <div class="playlist">
             <iframe id="songVariable" width="300" height="380" frameborder="0" allowtransparency="true"
                 allow="encrypted-media"></iframe>
@@ -46,10 +47,10 @@
     </div>
 
 
-    <!--input data goes here *city name*-->
+
     <div class="container-2">
         <!--forecast output-->
-        <div class="box-2 mix" id="weatherContainer">
+        <div class="output-forecast mix" id="weatherContainer">
         </div>
     </div>
 

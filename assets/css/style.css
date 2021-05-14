@@ -1,6 +1,5 @@
 body {
     background-color:rgb(0, 192, 192);
-
 }
 
 header {
@@ -28,21 +27,6 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-
-}
-
-.box-2 {
-    background-color: darkorange;
-    border: #270033;
-    color: #270033;
-    display: flex;
-    flex-basis: 100%;
-    flex-wrap:wrap;
-    font-family: 'Girassol', cursive;
-    justify-content: space-evenly;
-    margin: 5px;
-    padding: 10px;
-    text-align: center
 }
 
 .button {
@@ -61,7 +45,7 @@ header {
     animation: glowing 1300ms infinite;
 }
 
-.cute {
+.icon {
     color:darkorange;
     text-shadow: 2px 2px #270033;
 }
@@ -71,8 +55,26 @@ header {
 }
 
 .output-city {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.89);
     color: rgb(0, 192, 192);
     font-family: 'Girassol', cursive;
+    font-size: 2vw;
+    text-align: center;
+    text-shadow: 1px 1px 3px #000000;
+    width: 25vw;
+}
+
+.output-forecast {
+    background-color: darkorange;
+    border: #270033;
+    color: #270033;
+    display: flex;
+    flex-basis: 100%;
+    flex-wrap:wrap;
+    font-family: 'Girassol', cursive;
+    justify-content: space-evenly;
+    margin: 5px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -84,14 +86,12 @@ header {
     margin: 10px;
 }
 
-
 .text {
     text-align: center;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Architects Daughter', sans-serif;
     font-size: 2.5vw;
     padding: 10px;
 }
-
 
 @keyframes glowing {
     0% {
@@ -110,10 +110,12 @@ header {
 
 
 /*class for the borders*/
-
 .mix {
     border-style: dotted dashed solid double;
 }
+
+
+/*media query*/
 
 @media(min-width:800px) {
 .container-1{
@@ -121,8 +123,9 @@ header {
 }
 }
 
-@media(min-width:850px) {
+@media(min-width:1150px) {
 .text{
-    font-size: 22px;
+    font-size: 35px;
 }
 }
+
