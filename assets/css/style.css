@@ -11,9 +11,11 @@ header {
 }
 
 footer {
-    color: black; 
+    color: black;
     font-family: 'Roboto Condensed', sans-serif;
     text-align: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 }
 
 .container-1 {
@@ -113,12 +115,10 @@ footer {
     }
 }
 
-
 /*class for the borders*/
 .mix {
     border-style: dotted dashed solid double;
 }
-
 
 /*media query*/
 
