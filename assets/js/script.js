@@ -74,17 +74,27 @@ function getFiveDay(lat, lon) {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            data.daily.forEach(day => {
+            data.daily.forEach((day, index) => {
+                if (index === 0) {
+                    return;
+                }
+                let dayo = new Date(day.dt * 1000);
+                console.log(dayo);
+                var options = { weekday: 'long' };
+                console.log(new Intl.DateTimeFormat('en-US', options).format(dayo));
                 let tempForecast = day.temp.day;
                 let conditionForecast = day.weather[0].description;
                 let weatherCard = document.createElement('div');
                 let temp = document.createElement('h1');
+                let dayName = document.createElement('p');
+                dayName.innerHTML = new Intl.DateTimeFormat('en-US', options).format(dayo)
                 temp.innerHTML = tempForecast;
-                weatherCard.append(temp)
+                weatherCard.append(dayName);
+                weatherCard.append(temp);
                 let description = document.createElement('p');
                 description.innerHTML = conditionForecast;
                 weatherCard.append(description);
-                weatherContainer.append(weatherCard)
+                weatherContainer.append(weatherCard);
             });
         })
 }
