@@ -1,117 +1,128 @@
-    .container-1 {
-        background-color: teal;
-        border:darkorange solid;
-        color: darkorange;
-        display: flex; 
-        flex-wrap: wrap; 
-        justify-content: center;  
-        padding: 10px;
-        margin: 5px;
-    }
-    
-    .container-2 {
-        display: flex;
-        flex-direction: row;
-        height: 400px; 
-    }
+body {
+    background-color:rgb(0, 192, 192);
 
-    .box-1 {
-        align-content: center;
-    }
-    
-    .box-2 {
-        background-color: darkorange;
-        border: teal solid;
-        flex-basis: 50%;
-        margin: 5px;
-        padding: 10px;
-    }
-    
-    .box-3 {
-        color: teal;
-        display: flex;
-        flex-wrap:wrap;
-        font-size: 15px;
-        justify-content: space-evenly;
-        border:teal solid;
-        background-color: darkorange;
-        flex-basis: 50%;
-        margin: 5px;
-        padding: 10px;
-        text-align: center
-        
-    }
-    
-    .header {
-        color:black;
-        font-family:sans-serif;
-        font-size: 100px;
-        text-align: center;
-        font-family: 'Girassol', cursive;
-    
-    }
-    
-    .body {
-        background-color:grey;
-    }
-    
-    .display {
-        color: teal;
-        font-family: sans-serif;
-        text-align: center;
-    }
-    
-    .input {
-        text-align: center;
-        
-    }
+}
 
-    .button {
-        background-color: #1c87c9;
-        -webkit-border-radius: 60px;
-        border-radius: 60px;
-        border: none;
-        color: #eeeeee;
-        cursor: pointer;
-        display: inline-block;
-        font-family: sans-serif;
-        font-size: 20px;
-        padding: 10px 10px;
-        text-align: center;
-        text-decoration: none;
-        animation: glowing 1300ms infinite;
-    }
+header {
+    color:black;
+    font-family:sans-serif;
+    font-size: 12vw;
+    text-align: center;
+    text-shadow: 1px 1px darkorange;
+    font-family: 'Girassol', cursive;
+}
 
-    @keyframes glowing {
-        0% {
-          background-color: #2ba805;
-          box-shadow: 0 0 3px #2ba805;
-        }
-        50% {
-          background-color: #49e819;
-          box-shadow: 0 0 10px #49e819;
-        }
-        100% {
-          background-color: #2ba805;
-          box-shadow: 0 0 3px #2ba805;
-        }
-    }
+.container-1 {
+    background-color: #270033;
+    border:darkorange solid;
+    color: darkorange;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    margin: 5px;
+}
 
-    .text {
-        text-align: center;
-        font-family: 'Architects Daughter', cursive;
-        font-size: 25px;
-    }
-    .cute {
-    
-    }
-    
-    /*class for the borders*/
-    
-    .mix {
-        border-style: dotted dashed solid double;
-    }
+.container-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 
-    @media(max-width:768px) {
+}
 
+.box-2 {
+    background-color: darkorange;
+    border: #270033;
+    color: #270033;
+    display: flex;
+    flex-basis: 100%;
+    flex-wrap:wrap;
+    font-family: 'Girassol', cursive;
+    justify-content: space-evenly;
+    margin: 5px;
+    padding: 10px;
+    text-align: center
+}
+
+.button {
+    background-color: #1c87c9;
+    -webkit-border-radius: 60px;
+    border-radius: 60px;
+    border: none;
+    color: #270033;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Girassol', cursive;
+    font-size: 20px;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    animation: glowing 1300ms infinite;
+}
+
+.cute {
+    color:darkorange;
+    text-shadow: 2px 2px #270033;
+}
+
+.input {
+    text-align: center;
+}
+
+.output-city {
+    color: rgb(0, 192, 192);
+    font-family: 'Girassol', cursive;
+    text-align: center;
+}
+
+.playlist {
+    align-content: center;
+    border:rgb(0, 192, 192);
+    box-shadow: 0 0 2vw rgb(0, 192, 192);
+    padding: .1vw .1vh;
+    margin: 10px;
+}
+
+
+.text {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.5vw;
+    padding: 10px;
+}
+
+
+@keyframes glowing {
+    0% {
+        background-color:  rgb(0, 192, 192);
+        box-shadow: 0 0 3px darkorange;
     }
+    50% {
+        background-color:  rgb(0, 192, 192);
+        box-shadow: 0 0 10px darkorange;
+    }
+    100% {
+        background-color:  rgb(0, 192, 192);
+        box-shadow: 0 0 3px darkorange;
+    }
+}
+
+
+/*class for the borders*/
+
+.mix {
+    border-style: dotted dashed solid double;
+}
+
+@media(min-width:800px) {
+.container-1{
+    flex-wrap:nowrap;
+}
+}
+
+@media(min-width:850px) {
+.text{
+    font-size: 22px;
+}
+}
