@@ -22,12 +22,12 @@ let desc = document.querySelector('.desc');
 let temp = document.querySelector('.temp');
 let weatherContainer = document.getElementById('weatherContainer')
 
+//comment
 function init() {
     fetch('https://api.openweathermap.org/data/2.5/weather?q=chicago&units=imperial&appid=2acf688360ef2e4ae9e0ba6153c2285f')
         .then(response => response.json())
         .then(data => {
             let descValue = data['weather'][0]['main'];
-            console.log(descValue);
             const clientId = '7b1ddde2b4bd4ee182d6a36abe2a35cd';
             const clientSecret = '7774875a0e4c46feb89f46acd70dc278';
             fetch('https://accounts.spotify.com/api/token', {
@@ -52,15 +52,9 @@ function init() {
                         .then(response => response.json())
                         .then(data => {
                             let player = document.getElementById("songVariable");
-                            console.log(data.playlists);
-
                             let randomPlaylist = getRandom(data.playlists.items);
                             let randomPlaylistId = randomPlaylist.id;
-                            console.log(category);
-                            console.log(randomPlaylist);
-                            console.log(randomPlaylistId);
                             player.src = `https://open.spotify.com/embed/playlist/${randomPlaylistId}`
-                            console.log(data);
                         }
                         )
                 }
@@ -68,21 +62,18 @@ function init() {
         }
         )
 };
-
+//this function gets the five day forecast of the user's input
 function getFiveDay(lat, lon) {
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=current,minutely,hourly,alerts&appid=2acf688360ef2e4ae9e0ba6153c2285f`)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             weatherContainer.innerHTML = "";
             data.daily.forEach((day, index) => {
                 if (index === 0) {
                     return;
                 }
                 let dayo = new Date(day.dt * 1000);
-                console.log(dayo);
                 var options = { weekday: 'long' };
-                console.log(new Intl.DateTimeFormat('en-US', options).format(dayo));
                 let tempForecast = day.temp.day;
                 let conditionForecast = day.weather[0].description;
                 let weatherCard = document.createElement('div');
@@ -99,7 +90,7 @@ function getFiveDay(lat, lon) {
             });
         })
 }
-
+//this function gets weather 
 function getWeather() {
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + inputValue.value + '&units=imperial&appid=2acf688360ef2e4ae9e0ba6153c2285f')
         .then(response => response.json())
@@ -113,47 +104,44 @@ function getWeather() {
             cityName.innerHTML = nameValue;
             temp.innerHTML = tempValue;
             desc.innerHTML = descValue;
-            console.log(descValue);
-            getPlaylist();
-            function getPlaylist() {
-                const clientId = '7b1ddde2b4bd4ee182d6a36abe2a35cd';
-                const clientSecret = '7774875a0e4c46feb89f46acd70dc278';
-                fetch('https://accounts.spotify.com/api/token', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                        'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret)
-                    },
-                    body: 'grant_type=client_credentials'
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        let weatherCondition = descValue;
-                        let category = playlistOptions[weatherCondition] || "party";
-                        fetch(`https://api.spotify.com/v1/browse/categories/${category}/playlists?limit=10`, {
-                            method: 'GET',
-                            headers: {
-                                'Content-Type': 'application/x-www-form-urlencoded',
-                                'Authorization': 'Bearer  ' + data.access_token,
-                            },
-                        })
-                            .then(response => response.json())
-                            .then(data => {
-                                let player = document.getElementById("songVariable");
-                                console.log(data.playlists);
-
-                                let randomPlaylist = getRandom(data.playlists.items);
-                                let randomPlaylistId = randomPlaylist.id;
-                                console.log(category);
-                                console.log(randomPlaylist);
-                                console.log(randomPlaylistId);
-                                player.src = `https://open.spotify.com/embed/playlist/${randomPlaylistId}`
-                                console.log(data);
-                            });
-                        console.log(data);
-                    });
-            }
+            getPlaylist(descValue);
         });
+}
+
+//this function generates the spotify playlist based on weather
+function getPlaylist(descValue) {
+  const clientId = "7b1ddde2b4bd4ee182d6a36abe2a35cd";
+  const clientSecret = "7774875a0e4c46feb89f46acd70dc278";
+  fetch("https://accounts.spotify.com/api/token", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      Authorization: "Basic " + btoa(clientId + ":" + clientSecret),
+    },
+    body: "grant_type=client_credentials",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      let weatherCondition = descValue;
+      let category = playlistOptions[weatherCondition] || "party";
+      fetch(
+        `https://api.spotify.com/v1/browse/categories/${category}/playlists?limit=10`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            Authorization: "Bearer  " + data.access_token,
+          },
+        }
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          let player = document.getElementById("songVariable");
+          let randomPlaylist = getRandom(data.playlists.items);
+          let randomPlaylistId = randomPlaylist.id;
+          player.src = `https://open.spotify.com/embed/playlist/${randomPlaylistId}`;
+        });
+    });
 }
 
 function getRandom(arr) {
