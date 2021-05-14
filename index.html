@@ -9,42 +9,47 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Girassol&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Roboto+Condensed&display=swap" rel="stylesheet">
     <title>beat wave</title>
 </head>
 
-<header class="header"> <i class="fas fa-music cute"></i> Beat Wave <i class="fas fa-cloud-sun-rain cute"></i></header>
+<header> <i class="fas fa-music cute"></i> Beat Wave <i class="fas fa-cloud-sun-rain cute"></i></header>
 
-<body class="body">
-
+<body>
+    
     <!-- spotify playlist-->
-
     <div class="container-1 mix">
-        <!--explanation of app-->
-        <p class="text">
-             Has the pandemmy got you down, feeling stuck in the same routine? Use beatwave to freshen up your playlist while you daydream about where you’d like to go when things open back up! All you have to do is input a city of your choosing, and Beatwave will give you a Spotify playlist based on the current weather of that city. Happy listening!
-        </p>
-        <div class="box-1">
-            <iframe id="songVariable" width="300" height="380" frameborder="0" allowtransparency="true"
-                allow="encrypted-media"></iframe>
-        </div>
-    </div>
-
-    <!--input data goes here *city name*-->
-    <div class="container-2">
-        <div class="box-2 mix">
+        <div class=container-2>
+            <span class="text">
+            <strong>Has the pandemmy got you down, feeling stuck in the same routine? Use beatwave to freshen up your playlist while you
+            daydream about where you’d like to go when things open back up! 
+                <Br></Br>
+            All you have to do is input a city of your choosing, and Beatwave will give you a Spotify playlist based on the current weather of that city. Happy listening!
+            </strong>
+        </span>
+        
             <div class="input">
                 <input type="text" class="inputValue" id="inputValue" placeholder="Enter a city">
                 <input type="submit" value="submit" id="button" class="button">
-                <div class="display">
+                <div class="output-city">
                     <h1 class="cityName"></h1>
                     <p class="desc"></p>
                     <p class="temp"></p>
                 </div>
             </div>
         </div>
+        <div class="playlist">
+            <iframe id="songVariable" width="300" height="380" frameborder="0" allowtransparency="true"
+                allow="encrypted-media"></iframe>
+        </div>
+    </div>
 
+
+    <!--input data goes here *city name*-->
+    <div class="container-2">
         <!--forecast output-->
-        <div class="box-3 mix" id="weatherContainer">
+        <div class="box-2 mix" id="weatherContainer">
         </div>
     </div>
 
