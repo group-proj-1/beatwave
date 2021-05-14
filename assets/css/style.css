@@ -1,13 +1,9 @@
-/* media query*/
-
-@media(min-width:768px){
     .container-1 {
         background-color: teal;
         border:darkorange solid;
         color: darkorange;
         display: flex; 
         flex-wrap: wrap; 
-        font-family:sans-serif;
         justify-content: center;  
         padding: 10px;
         margin: 5px;
@@ -51,6 +47,7 @@
         font-family:sans-serif;
         font-size: 100px;
         text-align: center;
+        font-family: 'Girassol', cursive;
     
     }
     
@@ -98,13 +95,16 @@
           background-color: #2ba805;
           box-shadow: 0 0 3px #2ba805;
         }
-      }
+    }
 
-      .text {
-          text-align: center;
-
-      }
+    .text {
+        text-align: center;
+        font-family: 'Architects Daughter', cursive;
+        font-size: 25px;
+    }
+    .cute {
     
+    }
     
     /*class for the borders*/
     
@@ -112,4 +112,6 @@
         border-style: dotted dashed solid double;
     }
 
-}
+    @media(max-width:768px) {
+
+    }
