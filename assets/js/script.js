@@ -86,7 +86,6 @@ function getSevenDay(lat, lon) {
                 temp.innerHTML = tempForecast;
                 weatherCard.style.backgroundColor = 'darkorange';
                 weatherCard.style.border = '2px solid black';
-                weatherCard.style.width = '10%';
                 weatherCard.append(dayName);
                 weatherCard.append(temp);
                 let description = document.createElement('p');
