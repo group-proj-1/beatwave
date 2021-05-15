@@ -84,7 +84,7 @@ function getSevenDay(lat, lon) {
                 let dayName = document.createElement('p');
                 dayName.innerHTML = new Intl.DateTimeFormat('en-US', options).format(dayo)
                 temp.innerHTML = tempForecast;
-                weatherCard.style.backgroundColor ='darkorange'
+                weatherCard.style.backgroundColor = 'darkorange';
                 weatherCard.style.border = '2px solid black';
                 weatherCard.style.width = '10%';
                 weatherCard.append(dayName);
