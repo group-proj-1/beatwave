@@ -1,19 +1,19 @@
 //global variables
 let playlistOptions = {
-    Ash: "edm_dance",
-    Clear: "party",
-    Clouds: "sleep",
-    Dust: "rnb",
+    Ash: "pop",
+    Clear: "workout",
+    Clouds: "indie_alt",
+    Dust: "sleep",
     Dust: "toplists",
-    Fog: "rock",
-    Haze: "latin",
-    Mist: "country",
-    Rain: "hiphop",
-    Sand: "aapi_heritage_month",
-    Snow: "indie_alt",
-    Smoke: "mood",
-    Squall: "indie_alt",
-    Tornado: "chill",
+    Fog: "mood",
+    Haze: "mood",
+    Mist: "chill",
+    Rain: "chill",
+    Sand: "focus",
+    Snow: "sleep",
+    Smoke: "party",
+    Squall: "hiphop",
+    Tornado: "country",
 };
 let button = document.querySelector('.button');
 let inputValue = document.querySelector('.inputValue');
